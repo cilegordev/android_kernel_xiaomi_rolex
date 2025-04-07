@@ -1,0 +1,24 @@
+Clang - llvm
+git clone --depth=1 https://github.com/LineageOS/android_prebuilts_clang_kernel_linux-x86_clang-r416183b clang
+
+Gcc32 - arm
+git clone --depth=1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9 gcc32
+
+Gcc64 - aarch64
+git clone --depth=1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9 gcc64
+
+Ignore :
+In file included from scripts/kconfig/zconf.tab.c:2536:
+In function ‘dep_stack_insert’,
+    inlined from ‘sym_check_print_recursive’ at ../scripts/kconfig/symbol.c:1090:3,
+    inlined from ‘sym_check_deps’ at ../scripts/kconfig/symbol.c:1261:3:
+../scripts/kconfig/symbol.c:1066:19: warning: storing the address of local variable ‘cv_stack’ in ‘check_top’ [-Wdangling-pointer=]
+ 1066 |         check_top = stack;
+      |         ~~~~~~~~~~^~~~~~~
+../scripts/kconfig/symbol.c: In function ‘sym_check_deps’:
+../scripts/kconfig/symbol.c:1087:26: note: ‘cv_stack’ declared here
+ 1087 |         struct dep_stack cv_stack;
+      |                          ^~~~~~~~
+../scripts/kconfig/symbol.c:1057:4: note: ‘check_top’ declared here
+ 1057 | } *check_top;
+      |    ^~~~~~~~~
